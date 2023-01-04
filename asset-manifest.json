@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/modal-signIn/static/css/main.8b6ca0b1.css",
+    "main.js": "/modal-signIn/static/js/main.d89a68fc.js",
+    "index.html": "/modal-signIn/index.html",
+    "main.8b6ca0b1.css.map": "/modal-signIn/static/css/main.8b6ca0b1.css.map",
+    "main.d89a68fc.js.map": "/modal-signIn/static/js/main.d89a68fc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b6ca0b1.css",
+    "static/js/main.d89a68fc.js"
+  ]
+}
