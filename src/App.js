@@ -1,24 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react'
+import Modal from "./components/modal/Modal";
+import {data} from "./components/modal/data"
+import "./App.scss"
+
+
+
 
 function App() {
+
+   const [showModal, setShowModal] = useState(false);
+
+   const handleClick =()=> {
+    setShowModal(true)
+   }
+
+   const handleCloseModal =(e)=> {
+    e.stopPropagation(); 
+
+    if(e.target.classList.contains("cm")) {
+      setShowModal(false)
+    }
+   
+   }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <section className="intro-section --100vh --flex-center">
+          <div className="intro --center-all">
+               {
+                data.map((picture) => {
+                  return (
+                    <div key={picture.id}>
+                        <img src={picture.img} alt="img"/>
+                        
+                        <h1 className="--text-light --text-md">login</h1>
+                        <button onClick={handleClick}
+                         className="--btn --btn-secondary
+                          --center-all --mb2"
+                          >login
+                        </button>
+                    </div>
+                  )
+                })
+               }
+          </div>
+     </section>
+
+     {
+      showModal && <Modal onCloseModal={handleCloseModal}/>
+     }
+     </>
   );
 }
 
